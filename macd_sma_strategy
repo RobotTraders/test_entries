@@ -1,0 +1,24 @@
+//@version=5
+strategy('MACD + SMA Strategy', overlay=true, initial_capital = 1000, default_qty_value=100, default_qty_type=strategy.percent_of_equity, commission_value=0.1, commission_type=strategy.commission.percent)
+
+// Indicators
+fastLength = input(28)
+slowLength = input(30)
+signalLength = input(9)
+macd = ta.ema(close, fastLength) - ta.ema(close, slowLength)
+macd_signal = ta.ema(macd, signalLength)
+macd_hist = macd - macd_signal
+sma30 = ta.sma(close, 30)
+atr = ta.atr(14)
+
+// Buy/Sell conditions
+buy  = macd_hist > 0
+sell = ta.crossunder(close, sma30)
+
+// Orders #
+if buy and strategy.position_size == 0
+    strategy.entry("buy", strategy.long)
+    strategy.exit("SL", "buy", stop = close - 2 * atr)
+
+if sell
+    strategy.close("buy", "Sell")
