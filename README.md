@@ -1,18 +1,17 @@
-# ma_backtest
+# test_entries
 
-Backtest your OWN TRADING BOT in Python | Tutorial
+The two best ways to test and improve trade entries | Tutorial
 -------------
-Code: backtest_2sma_btc.ipynb
+Pinescript strategy:
+  - macd_sma_strategy
+  
+Python notebooks:
+  - optimisation_fixed_sl_tp_exit.ipynb
+  - optimisation_fixed_candle_exit.ipynb
 
-https://youtu.be/DAFQ0HHo8iY
 
-We demonstrate how to backtest a simple trading strategy in Python. This pedagogical tutorial guides you through the steps of downloading the data on the coin using the python-binance library, cleaning the data with the pandas library, computing the indicators with the ta library, structuring neatly the backtest, and finally analysing, plotting, and commenting on the results. The strategy used as a case study is based on two simple moving averages with the pair BTC/USDT. 
+https://youtu.be/wB258VG3CV8
+
+In this video you will learn how to test the validity of an entry and how to improve it.
 
 
-Optimise your trading strategies for SAFER and more PROFITABLE results with the RSI | Tutorial
--------------
-Code: optimisation_with_rsi.ipynb
-
-https://youtu.be/PljviyzhdhU
-
-Using the relative strength index indicator, we show you how to optimise a simple trading strategy in Python. This pedagogical tutorial emphasizes caveats when it comes to finding "best" parameters for a strategy, as well as some important metrics to evaluate the quality of the overall strategy. 
